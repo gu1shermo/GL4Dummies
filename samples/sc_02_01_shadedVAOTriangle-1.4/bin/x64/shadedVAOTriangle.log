@@ -1,0 +1,3 @@
+﻿  window.c
+window.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  shadedVAOTriangle.vcxproj -> C:\GL4Dummies\samples\sc_02_01_shadedVAOTriangle-1.4\bin\x64\shadedVAOTriangle.exe

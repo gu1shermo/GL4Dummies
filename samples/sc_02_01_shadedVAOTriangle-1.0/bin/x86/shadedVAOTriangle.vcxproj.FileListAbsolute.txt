@@ -1,0 +1,2 @@
+C:\GL4Dummies\samples\sc_02_01_shadedVAOTriangle-1.0\bin\x86\shadedVAOTriangle.exe
+C:\GL4Dummies\samples\sc_02_01_shadedVAOTriangle-1.0\bin\x86\shadedVAOTriangle.pdb
