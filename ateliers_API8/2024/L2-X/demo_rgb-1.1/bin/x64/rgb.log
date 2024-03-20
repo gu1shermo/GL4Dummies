@@ -1,0 +1,16 @@
+﻿  animations.c
+  audioHelper.c
+  window.c
+  Generating Code...
+animations.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_Init referenced in function ahInitAudio
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_Quit referenced in function ahClean
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_OpenAudio referenced in function ahInitAudio
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_LoadMUS referenced in function ahInitAudio
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_FreeMusic referenced in function ahClean
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_SetPostMix referenced in function ahInitAudio
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_PlayMusic referenced in function ahInitAudio
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_HaltMusic referenced in function ahClean
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_PlayingMusic referenced in function ahClean
+audioHelper.obj : error LNK2019: unresolved external symbol Mix_CloseAudio referenced in function ahClean
+C:\GL4Dummies\ateliers_API8\2024\L2-X\demo_rgb-1.1\\bin\x64\rgb.exe : fatal error LNK1120: 10 unresolved externals

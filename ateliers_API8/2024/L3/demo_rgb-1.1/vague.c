@@ -1,7 +1,6 @@
 #include <GL4D/gl4du.h>
 #include <GL4D/gl4dh.h>
 #include <GL4D/gl4duw_SDL2.h>
-#include "audioHelper.h"
 
 /* Prototypes des fonctions statiques contenues dans ce fichier C */
 static void init(void);
@@ -13,20 +12,8 @@ static GLuint _pId = 0;
 static GLuint _quadId = 0;
 
 
-static float _volume = 0.0f;
-static void  _update_volume(void) {
-  int l = ahGetAudioStreamLength() / 2; /* car 16 bits */
-  Sint16 * s = (Sint16 *)ahGetAudioStream();
-  float moy = 0.0f;
-  for(int i = 0; i < l; ++i)
-    moy += abs(s[i]) / ((1 << 15) - 1.0f);
-  moy /= l;
-  moy = pow(moy, 0.5f);
-  _volume = moy;
-}
-static float _get_volume(void) {
-  return _volume;
-}
+
+
 
 void vague(int state) {
   switch(state) {
@@ -36,7 +23,7 @@ void vague(int state) {
   case GL4DH_FREE:
     return;
   case GL4DH_UPDATE_WITH_AUDIO:
-    _update_volume();
+    //_update_volume();
     return;
   default: /* GL4DH_DRAW */
     draw();
@@ -109,7 +96,7 @@ static void draw(void) {
    * GL4Dummies, ici on intègre pas la rotation qui vient après */
   gl4duSendMatrices();
 
-  glUniform1f(glGetUniformLocation(_pId, "temps"), _get_volume() + t / 2000.0);
+  glUniform1f(glGetUniformLocation(_pId, "temps"), t / 2000.0);
   
   /* dessiner la géométrie */
   gl4dgDraw(_quadId);

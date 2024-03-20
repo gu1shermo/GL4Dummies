@@ -13,7 +13,7 @@
  */
 
 #include <GL4D/gl4dh.h>
-#include "audioHelper.h"
+//#include "audioHelper.h"
 #include <assert.h>
 #include <stdlib.h>
 #include <GL4D/gl4dg.h>
@@ -92,20 +92,7 @@ void fondu(void (* a0)(int), void (* a1)(int), Uint32 t, Uint32 et, int state) {
   }
 }
 
-static float _volume = 0.0f;
-static void  _update_volume(void) {
-  int l = ahGetAudioStreamLength() / 2; /* car 16 bits */
-  Sint16 * s = (Sint16 *)ahGetAudioStream();
-  float moy = 0.0f;
-  for(int i = 0; i < l; ++i)
-    moy += abs(s[i]) / ((1 << 15) - 1.0f);
-  moy /= l;
-  moy = pow(moy, 0.5f);
-  _volume = moy;
-}
-static float _get_volume(void) {
-  return _volume;
-}
+
 
 
 void rouge(int state) {
@@ -120,11 +107,11 @@ void rouge(int state) {
     return;
   case GL4DH_UPDATE_WITH_AUDIO:
     /* METTRE A JOUR VOTRE ANIMATION EN FONCTION DU SON */
-    _update_volume();
+    //_update_volume();
     return;
   default: /* GL4DH_DRAW */
     /* JOUER L'ANIMATION */
-    glClearColor(_get_volume(), 0.0f, 0.0f, 1.0f);
+    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     return;
   }
@@ -142,11 +129,11 @@ void vert(int state) {
     return;
   case GL4DH_UPDATE_WITH_AUDIO:
     /* METTRE A JOUR VOTRE ANIMATION EN FONCTION DU SON */
-    _update_volume();
+    //_update_volume();
     return;
   default: /* GL4DH_DRAW */
     /* JOUER L'ANIMATION */
-    glClearColor(0.0f, _get_volume(), 0.0f, 1.0f);
+    glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     return;
   }
@@ -164,11 +151,11 @@ void bleu(int state) {
     return;
   case GL4DH_UPDATE_WITH_AUDIO:
     /* METTRE A JOUR VOTRE ANIMATION EN FONCTION DU SON */
-    _update_volume();
+    //_update_volume();
     return;
   default: /* GL4DH_DRAW */
     /* JOUER L'ANIMATION */
-    glClearColor(0.0f, 0.0f, _get_volume(), 1.0f);
+    glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     return;
   }

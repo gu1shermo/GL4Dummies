@@ -15,7 +15,7 @@
 #include <GL4D/gl4dh.h>
 #include <GL4D/gl4duw_SDL2.h>
 #include "animations.h"
-#include "audioHelper.h"
+//#include "audioHelper.h"
 
 /* Prototypes des fonctions statiques contenues dans ce fichier C. */
 static void init(void);
@@ -55,7 +55,7 @@ int main(int argc, char ** argv) {
   gl4duwKeyDownFunc(keydown);
   gl4duwDisplayFunc(gl4dhDraw);
 
-  ahInitAudio("takeonme.mod");
+  //ahInitAudio("takeonme.mod");
   gl4duwMainLoop();
   return 0;
 }
@@ -95,6 +95,6 @@ static void keydown(int keycode) {
 /*!\brief appelée à la sortie du programme (atexit).
  */
 static void quit(void) {
-  ahClean();
+  //ahClean();
   gl4duClean(GL4DU_ALL);
 }

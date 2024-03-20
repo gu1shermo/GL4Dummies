@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ateliers_API8",
+    "\\ateliers_API8\\2024",
+    "\\ateliers_API8\\2024\\L3",
+    "\\ateliers_API8\\2024\\L3\\demo_rgb-1.1",
+    "\\ateliers_API8\\2024\\L3\\demo_rgb-1.1\\bin",
+    "\\ateliers_API8\\2024\\L3\\demo_rgb-1.1\\bin\\x64",
+    "\\ateliers_API8\\2024\\L3\\demo_rgb-1.1\\bin\\x86",
+    "\\ateliers_API8\\2024\\L3\\demo_rgb-1.1\\documentation"
   ],
+  "SelectedNode": "\\ateliers_API8\\2024\\L3\\demo_rgb-1.1\\window.c",
   "PreviewInSolutionExplorer": false
 }
